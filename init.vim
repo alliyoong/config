@@ -1,4 +1,21 @@
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'tomasr/molokai'
+Plug 'jiangmiao/auto-pairs'
+Plug 'preservim/nerdtree'
+Plug 'preservim/nerdcommenter'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'junegunn/fzf', {'dir': '~/.fzf', 'do': './install --all'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-lua/completion-nvim'
+
+call plug#end()
+
+
+
+
 set encoding=utf-8 "set default encoding to utf-8"
 set number relativenumber "show relative line number"
 syntax enable "enable syntax highlighting"
@@ -20,6 +37,7 @@ set ignorecase "case insensitive search by default"
 set smartcase "case sensitive search when using uppercase characters"
 set colorcolumn=80 "display column margin (80 chars)"
 set hlsearch "highlight all search patterns"
+set signcolumn=yes "add a column for signs (e.g. LSP,...)"
 
 " Keybindings
 " map leader key
@@ -27,7 +45,7 @@ let mapleader=' '
 let maplocalleader='\\'
 " open config file in a new tab
 nnoremap <leader>ev :tabedit $MYVIMRC<CR> "open config file in a new tab"
-" reload condig file
+" reload config file
 nnoremap <leader>sv :source $MYVIMRC<CR> "reload config file"
 " clear search highlight
 nnoremap <silent> <leader>a :<C-u>nohlsearch<CR><C-l>
@@ -57,21 +75,7 @@ nnoremap <leader>yy :normal "+yy<CR>
 " add current selected text to X clipboard
 xnoremap <leader>yy :normal gv"+y<CR>
 
- 
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'tomasr/molokai'
-Plug 'jiangmiao/auto-pairs'
-Plug 'scrooloose/nerdtree'
-Plug 'preservim/nerdcommenter'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-
-call plug#end()
-
-
+" set color theme
 colorscheme molokai
 let g:airline_theme='molokai'
 
@@ -92,4 +96,11 @@ nmap <leader>t :NERDTreeToggle<CR>
 " Tabs
 let g:airline#extensions#tabline#enabled=1
 let g:airline#extensions#tabline#fnamemode=':t'
+
+" lsp and autocompletion
+
+
+
+
+
 
