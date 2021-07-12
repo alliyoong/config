@@ -1,7 +1,7 @@
 
 " Keybindings
 " map leader key
-let mapleader=' '
+let mapleader='\'
 let maplocalleader='\\'
 " open config file in a new tab
 nnoremap <leader>ev :tabedit $MYVIMRC<CR> "open config file in a new tab"
@@ -41,8 +41,9 @@ nmap <silent> <c-h> :wincmd h<CR>
 nmap <silent> <c-j> :wincmd j<CR>
 nmap <silent> <c-l> :wincmd l<CR>
 
-
-
-
-
-
+" map tab to indent
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
