@@ -1,4 +1,4 @@
-
+set clipboard+=unnamed
 set cot=menuone,noinsert,noselect shm+=c
 set encoding=utf-8 "set default encoding to utf-8"
 set number relativenumber "show relative line number"
